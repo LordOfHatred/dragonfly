@@ -27,7 +27,6 @@ function subscribe($callback, $sub_str="market.btcusdt.depth.step0") {
                 'sub' => $GLOBALS['sub_str'],
                 'id' => 'depth' . time()
             ]);
-            var_dump($data);
             $con->send($data);
         };
 
