@@ -66,6 +66,30 @@ class Huobiapi
         return json_decode($this->curl($url));
     }
 
+    // buy-market：市价买
+    public function marketBuy($symbol, $qty)
+    {
+        return $this->place_order(ACCOUNT_ID, $qty, 0, $symbol, 'buy-market');
+    }
+
+    // sell-market：市价卖
+    public function marketSell($symbol, $qty)
+    {
+        return $this->place_order(ACCOUNT_ID, $qty, 0, $symbol, 'sell-market');
+    }
+
+    //  buy-limit：限价买
+    public function limitBuy($symbol, $qty,$price)
+    {
+        return $this->place_order(ACCOUNT_ID, $qty, $price, $symbol, 'buy-limit');
+    }
+
+    // sell-limit：限价卖
+    public function limitSell($symbol, $qty, $price)
+    {
+        return $this->place_order(ACCOUNT_ID,$qty, $price, $symbol, 'sell-limit');
+    }
+
     /**
     * 交易类API
     */
@@ -126,6 +150,12 @@ class Huobiapi
         return $result;
     }
 
+    // 提现
+    public function withdraw($symbol, $qty, $wallet)
+    {
+        return $this->withdraw_create($wallet, $qty, $symbol);
+    }
+
     /**
     * 虚拟币提现API
     */
@@ -144,6 +174,7 @@ class Huobiapi
         $url = $this->create_sign_url($postdata);
         $return = $this->curl($url);
         $result = json_decode($return);
+
         return $result;
     }
 
