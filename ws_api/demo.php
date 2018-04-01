@@ -3,8 +3,8 @@
 require_once __DIR__ . '/subscribe.php';
 
 subscribe(function($data) {
-    if(isset($data['tick']) && isset($data['bids']) && isset($data['asks'])) {
-        analyze($data['bids'], $data['asks']);
+    if(isset($data['tick']) && isset($data['tick']['bids']) && isset($data['tick']['asks'])) {
+        analyze($data['tick']['bids'], $data['tick']['asks']);
     }
 }, 'market.btcusdt.depth.step0');
 

@@ -32,7 +32,6 @@ function subscribe($callback, $sub_str="market.btcusdt.depth.step0") {
         };
 
         $con->onMessage = function($con, $data) {
-            var_dump($data);
             $data = gzdecode($data);
             $data = json_decode($data, true);
             if(isset($data['ping'])) {
