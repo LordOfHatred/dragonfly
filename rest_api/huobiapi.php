@@ -206,8 +206,8 @@ class Huobiapi
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         
-        curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:7001");
-        curl_setopt($ch, CURLOPT_PROXYTYPE, constant('CURLPROXY_SOCKS5'));
+        //curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:7001");
+        //curl_setopt($ch, CURLOPT_PROXYTYPE, constant('CURLPROXY_SOCKS5'));
 
         curl_setopt ($ch, CURLOPT_HTTPHEADER, [
             "Content-Type: application/json",
