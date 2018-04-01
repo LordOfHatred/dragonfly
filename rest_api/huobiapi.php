@@ -23,7 +23,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url([]);
 
-        return json_decode($this->curl($url));
+        return json_decode($this->curl($url), true);
     }
 
     // 查询系统支持的所有币种
@@ -33,7 +33,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url([]);
 
-        return json_decode($this->curl($url));
+        return json_decode($this->curl($url), true);
     }
 
     // 查询系统当前时间
@@ -43,7 +43,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url([]);
 
-        return json_decode($this->curl($url));
+        return json_decode($this->curl($url), true);
     }
 
     // 查询当前用户的所有账户(即account-id)
@@ -53,7 +53,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url([]);
 
-        return json_decode($this->curl($url));
+        return json_decode($this->curl($url), true);
     }
 
     // 查询指定账户的余额
@@ -63,7 +63,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url([]);
 
-        return json_decode($this->curl($url));
+        return json_decode($this->curl($url), true);
     }
 
     // buy-market：市价买
@@ -113,7 +113,7 @@ class Huobiapi
         $url = $this->create_sign_url();
         $return = $this->curl($url,$postdata);
 
-        return json_decode($return);
+        return json_decode($return, true);
     }
 
     // 查询某个订单详情
@@ -124,7 +124,7 @@ class Huobiapi
         $url = $this->create_sign_url();
         $return = $this->curl($url);
 
-        return json_decode($return);
+        return json_decode($return, true);
     }
 
     // 查询某个订单的成交明细
@@ -133,9 +133,9 @@ class Huobiapi
         $this->api_method = '/v1/order/orders/'.$order_id.'/matchresults';
         $this->req_method = 'GET';
         $url = $this->create_sign_url();
-        $return = $this->curl($url,$postdata);
+        $return = $this->curl($url);
 
-        return json_decode($return);
+        return json_decode($return, true);
     }
 
     // 获取账户余额
@@ -145,7 +145,7 @@ class Huobiapi
         $this->req_method = 'GET';
         $url = $this->create_sign_url();
         $return = $this->curl($url);
-        $result = json_decode($return);
+        $result = json_decode($return, true);
 
         return $result;
     }
@@ -173,7 +173,7 @@ class Huobiapi
         if ($addr_tag) $postdata['addr-tag'] = $addr_tag;
         $url = $this->create_sign_url($postdata);
         $return = $this->curl($url);
-        $result = json_decode($return);
+        $result = json_decode($return, true);
 
         return $result;
     }
