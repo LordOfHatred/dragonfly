@@ -5,10 +5,13 @@
 class Binance {
 
     public $btc_value = 0.00;
-
+ public $httpDebug = false; // /< If you enable this, curl will output debugging information
     protected $base = "https://api.binance.com/api/";
    protected $wapi = 'https://api.binance.com/wapi/'; // /< REST endpoint for the withdrawals    
-
+   protected $info = [ 
+         "timeOffset" => 0 
+   ]; // /< Additional connection options
+   
     public function __construct($api_key, $api_secret) {
         $this->api_key = $api_key;
         $this->api_secret = $api_secret;
@@ -60,7 +63,7 @@ class Binance {
     public function orderStatus($symbol, $orderid) {
         return $this->signedRequest("v3/order",["symbol"=>$symbol, "orderId"=>$orderid]);
     }
-    
+
     public function openOrders($symbol) {
         return $this->signedRequest("v3/openOrders",["symbol"=>$symbol]);
     }
