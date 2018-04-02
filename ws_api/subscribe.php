@@ -61,7 +61,7 @@ function subscribeForBinance($callback, $sub_str="btcusdt.depth") {
     $worker = new Worker();
     $worker->onWorkerStart = function($worker) {
         // ssl需要访问443端口
-        $con = new AsyncTcpConnection('wss://stream.binance.com:9443/ws/' . $sub_str);
+        $con = new AsyncTcpConnection('ws://stream.binance.com:9443/ws/' . $sub_str);
 
         // 设置以ssl加密方式访问，使之成为wss
         $con->transport = 'ssl';
