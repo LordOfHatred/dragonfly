@@ -9,31 +9,31 @@ define('SECRET_KEY', 'oCgevuF6sag1ppFxOnoDwElYcdFocY26cYfIWIIdgLXdO6GexPjtcLHCfc
 $api = new Binance(ACCESS_KEY, SECRET_KEY);
 
 //查询账户余额
-$balances = $api->balances();
-print_r($balances);
+//$balances = $api->balances();
+//print_r($balances);
 
 // 市价买
-$symbol = 'btcusdt';
-$qty = '1';
+$symbol = 'BTCUSDT';
+$qty = '0.001';
 //$trade_id = $api->marketBuy($symbol, $qty); 
 //var_dump($trade_id);
-die;
+//die;
 // 市价卖
-$qty = '0.001';
+$qty = '0.01';
 //$trade_id = $api->marketSell($symbol, $qty);
 //var_dump($trade_id);
-die;
+//die;
 
 // 限价买
 $price = '6653.17';
 //$trade_id = $api->limitBuy($symbol, $qty,$price); 
 //var_dump($trade_id);
-die;
+//die;
 
 // 限价卖
 //$trade_id = $api->limitSell($symbol, $qty,$price);  
 //var_dump($trade_id);
-die;
+//die;
 
 
 $wallet = '17ccfC1RR2SLyrZiBgGVEsUfP5T17iZ9s5';
@@ -44,7 +44,7 @@ $withdraw_id = $api->withdraw($symbol, $qty, $wallet);     //把qty个symbol币�
 var_dump($withdraw_id);die;
 
 
-//$trade_id = 2932505965;
+$trade_id = 'XwTmfSFpvH02tn2fU2UqGv';
 // 交易详情
 //$orderDetail = $api->orderStatus( $symbol, $trade_id); 
 //var_dump($orderDetail);
