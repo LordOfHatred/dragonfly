@@ -8,18 +8,44 @@ define('SECRET_KEY', 'oCgevuF6sag1ppFxOnoDwElYcdFocY26cYfIWIIdgLXdO6GexPjtcLHCfc
 
 $api = new Binance(ACCESS_KEY, SECRET_KEY);
 
-$ticker = $api->prices();
-print_r($ticker); // List prices of all symbols 
-echo "Price of BNB: {$ticker['BNBBTC']} BTC.".PHP_EOL;
-
-// Get balances for all of your positions, including estimated BTC value
-$balances = $api->balances($ticker);
+//查询账户余额
+$balances = $api->balances();
 print_r($balances);
-echo "BTC owned: ".$balances['BTC']['available'].PHP_EOL;
-echo "ETH owned: ".$balances['ETH']['available'].PHP_EOL;
-echo "Estimated Value: ".$api->btc_value." BTC".PHP_EOL;
 
-// Getting 24hr ticker price change statistics for a symbol
-$prevDay = $api->prevDay("BNBBTC");
-print_r($prevDay);
-echo "BNB price change since yesterday: ".$prevDay['priceChangePercent']."%".PHP_EOL;
+// 市价买
+$symbol = 'btcusdt';
+$qty = '1';
+//$trade_id = $api->marketBuy($symbol, $qty); 
+//var_dump($trade_id);
+die;
+// 市价卖
+$qty = '0.001';
+//$trade_id = $api->marketSell($symbol, $qty);
+//var_dump($trade_id);
+die;
+
+// 限价买
+$price = '6653.17';
+//$trade_id = $api->limitBuy($symbol, $qty,$price); 
+//var_dump($trade_id);
+die;
+
+// 限价卖
+//$trade_id = $api->limitSell($symbol, $qty,$price);  
+//var_dump($trade_id);
+die;
+
+
+$wallet = '17ccfC1RR2SLyrZiBgGVEsUfP5T17iZ9s5';
+// 提现
+$symbol='btc';
+$withdraw_id = $api->withdraw($symbol, $qty, $wallet);     //把qty个symbol币提现到wallet账号，并且返回withdraw_id作为唯一标识
+
+var_dump($withdraw_id);die;
+
+
+//$trade_id = 2932505965;
+// 交易详情
+//$orderDetail = $api->orderStatus( $symbol, $trade_id); 
+//var_dump($orderDetail);
+
