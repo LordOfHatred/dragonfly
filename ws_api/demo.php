@@ -20,4 +20,4 @@ subscribeForBinance(function($data) {
     if(isset($data['bids']) && isset($data['asks'])) {
         analyze($data['bids'], $data['asks']);
     }
-}, 'btcusdt.depth');
+}, 'btcusdt@depth');
