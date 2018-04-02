@@ -55,7 +55,7 @@ function subscribe($callback, $sub_str="market.btcusdt.depth.step0") {
 $sub_str type: string e.g market.btcusdt.depth.step0 具体请查看api
 $callback type: function 回调函数，当获得数据时会调用
 */
-function subscribeForBinance($callback, $sub_str="btcusdt@depth") {
+function subscribeForBinance($callback, $sub_str="btcusdt@depth5") {
     $GLOBALS['sub_str'] = $sub_str;
     $GLOBALS['callback'] = $callback;
     $worker = new Worker();
