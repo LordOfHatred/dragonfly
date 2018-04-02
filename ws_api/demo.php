@@ -16,8 +16,13 @@ function analyze($bids, $asks)
     var_dump($asks);
 }
 
+
+/*
+    Top <levels> bids and asks, pushed every second. Valid <levels> are 5, 10, or 20.
+
+    Stream Name: <symbol>@depth<levels>
+*/
 subscribeForBinance(function($data) {
-    print_r($data);
     if(isset($data['bids']) && isset($data['asks'])) {
         analyze($data['bids'], $data['asks']);
     }

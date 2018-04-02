@@ -66,7 +66,7 @@ function subscribeForBinance($callback, $sub_str="btcusdt@depth5") {
         // 设置以ssl加密方式访问，使之成为wss
         $con->transport = 'ssl';
         $con->onConnect = function($con) {
-            var_dump($con);
+            
         };
 
         $con->onMessage = function($con, $data) {
