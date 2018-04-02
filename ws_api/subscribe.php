@@ -70,7 +70,14 @@ function subscribeForBinance($callback, $sub_str="btcusdt@depth") {
         };
 
         $con->onMessage = function($con, $data) {
-            var_dump($data);
+            $data = json_decode($data, true);
+            if(isset($data['ping'])) {
+                $con->send(json_encode([
+                    "pong" => $data['ping']
+                ]));
+            }else{
+                call_user_func_array($GLOBALS['callback'], array($data));           
+            }
         };
         $con->connect();
     };

@@ -17,6 +17,7 @@ function analyze($bids, $asks)
 }
 
 subscribeForBinance(function($data) {
+    print_r($data);
     if(isset($data['bids']) && isset($data['asks'])) {
         analyze($data['bids'], $data['asks']);
     }
