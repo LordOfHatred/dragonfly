@@ -68,7 +68,7 @@ class Binance {
     }
 
     // sell-limit：限价卖
-    public function limitSell($symbol, $qty, $price)
+    public function limitSell($symbol, $quantity, $price)
     {
         return $this->order("SELL", $symbol, $quantity, $price, 'LIMIT');
     }
