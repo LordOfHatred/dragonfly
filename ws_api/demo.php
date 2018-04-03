@@ -18,7 +18,7 @@ subscribeForHuobi(function($data) {
 */
 subscribeForBinance(function($data) {
     echo 'binance';
-    print_r($data);
+//    print_r($data);
     if(isset($data['bids']) && isset($data['asks'])) {
         analyzeForBinance($data['bids'], $data['asks']);
     }
