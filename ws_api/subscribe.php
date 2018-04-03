@@ -82,5 +82,10 @@ function subscribeForBinance($callback, $sub_str="btcusdt@depth5") {
         $con->connect();
     };
 
+    
+}
+
+function runAll()
+{
     Worker::runAll();
 }
