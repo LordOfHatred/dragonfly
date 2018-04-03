@@ -5,7 +5,7 @@ require_once __DIR__ . '/subscribe.php';
 //  火币
 subscribeForHuobi(function($data) {
     $ch = isset($data['ch']) ? $data['ch'] : '';
-    echo 'huobi:', $ch , "\n";
+//    echo 'huobi:', $ch , "\n";
     if(isset($data['tick']) && isset($data['tick']['bids']) && isset($data['tick']['asks'])) {
         analyzeForHuobi($data['tick']['bids'], $data['tick']['asks']);
     }
