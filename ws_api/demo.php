@@ -17,7 +17,7 @@ subscribeForHuobi(function($data) {
     Stream Name: <symbol>@depth<levels>
 */
 subscribeForBinance(function($data) {
-    echo 'binance';
+//    echo 'binance';
 //    print_r($data);
     if(isset($data['bids']) && isset($data['asks'])) {
         analyzeForBinance($data['bids'], $data['asks']);
