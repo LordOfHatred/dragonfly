@@ -32,6 +32,7 @@ function analyzeForHuobi($bids, $asks)
 {
     //var_dump($bids);
     // var_dump($asks);
+    echo "Huobi got new data\n";
 }
 
 //这里是我的代码，$bid是行情里面的买入价表，$ask是卖出价表
@@ -39,4 +40,5 @@ function analyzeForBinance($bids, $asks)
 {
     //var_dump($bids);
     // var_dump($asks);
+    echo "Binance got new data\n";
 }

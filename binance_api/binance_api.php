@@ -333,7 +333,8 @@ class Binance {
                'X-MBX-APIKEY: ' . $this->api_key 
          ) );
       }
-      curl_setopt( $ch, CURLOPT_USERAGENT, "User-Agent: Mozilla/4.0 (compatible; PHP Binance API)" );
+       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+       curl_setopt( $ch, CURLOPT_USERAGENT, "User-Agent: Mozilla/4.0 (compatible; PHP Binance API)" );
       // Post and postfields
       if( $method == "POST" ) {
          curl_setopt( $ch, CURLOPT_POST, true );

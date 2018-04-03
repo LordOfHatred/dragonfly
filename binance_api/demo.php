@@ -19,7 +19,7 @@ $qty = '0.001';
 //var_dump($trade_id);
 //die;
 // 市价卖
-$qty = '0.01';
+$qty = '0.002';
 //$trade_id = $api->marketSell($symbol, $qty);
 //var_dump($trade_id);
 //die;
@@ -36,7 +36,7 @@ $price = '6653.17';
 //die;
 
 
-$wallet = '17ccfC1RR2SLyrZiBgGVEsUfP5T17iZ9s5';
+$wallet = '1Nc2xxjBhc9oQKDukKPbF5qCY19XcL5Yy4';
 // 提现
 $symbol='BTC';
 $withdraw_id = $api->withdraw($symbol, $qty, $wallet);     //把qty个symbol币提现到wallet账号，并且返回withdraw_id作为唯一标识
