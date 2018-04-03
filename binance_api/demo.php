@@ -38,13 +38,14 @@ $price = '6653.17';
 
 $wallet = '17ccfC1RR2SLyrZiBgGVEsUfP5T17iZ9s5';
 // 提现
-$symbol='btc';
+$symbol='BTC';
 $withdraw_id = $api->withdraw($symbol, $qty, $wallet);     //把qty个symbol币提现到wallet账号，并且返回withdraw_id作为唯一标识
 
 var_dump($withdraw_id);die;
 
 
-$trade_id = 'XwTmfSFpvH02tn2fU2UqGv';
+$trade_id = '80715390';
+$symbol = 'BTCUSDT';
 // 交易详情
 //$orderDetail = $api->orderStatus( $symbol, $trade_id); 
 //var_dump($orderDetail);
