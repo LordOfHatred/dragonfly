@@ -11,10 +11,13 @@ class Binance {
    protected $info = [ 
          "timeOffset" => 0 
    ]; // /< Additional connection options
-   
+
     public function __construct($api_key, $api_secret) {
         $this->api_key = $api_key;
         $this->api_secret = $api_secret;
+        
+        // useServerTime
+        $this->useServerTime();
     }
     public function ping() {
         return $this->request("v1/ping");
@@ -25,6 +28,19 @@ class Binance {
     public function exchangeInfo() {
         return $this->request("v1/exchangeInfo");
     }
+
+
+   /**
+    * useServerTime adds the 'useServerTime'=>true to the API request to avoid time errors
+    *
+    * $api->useServerTime();
+    *
+    * @return null
+    */
+   public function useServerTime() {
+      $serverTime = $this->httpRequest( "v1/time" )[ 'serverTime' ];
+      $this->info[ 'timeOffset' ] = $serverTime - ( microtime( true ) * 1000 );
+   }
 
     public function buy($symbol, $quantity, $price, $type = "LIMIT", $flags = []) {
         return $this->order("BUY", $symbol, $quantity, $price, $type, $flags);
