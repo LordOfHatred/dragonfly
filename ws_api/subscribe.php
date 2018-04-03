@@ -58,8 +58,8 @@ $callback type: function 回调函数，当获得数据时会调用
 function subscribeForBinance($callback, $sub_str="btcusdt@depth5") {
     $GLOBALS['sub_str'] = $sub_str;
     $GLOBALS['callback'] = $callback;
-    $worker = new Worker();
-    $worker->onWorkerStart = function($worker) {
+    $workerForBinance = new Worker();
+    $workerForBinance->onWorkerStart = function($worker) {
         // ssl需要访问443端口
         $con = new AsyncTcpConnection('ws://stream.binance.com:9443/ws/' . $GLOBALS['sub_str']);
 
@@ -81,8 +81,6 @@ function subscribeForBinance($callback, $sub_str="btcusdt@depth5") {
         };
         $con->connect();
     };
-
-    
 }
 
 function runAll()
