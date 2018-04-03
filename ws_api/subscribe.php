@@ -1,6 +1,6 @@
 <?php
  
-require_once __DIR__ . '/workerman_linux/Autoloader.php';
+require_once __DIR__ . '/workerman_wins/Autoloader.php';
 
 use Workerman\Worker;
 use Workerman\Connection\AsyncTcpConnection;

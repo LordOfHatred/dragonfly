@@ -21,7 +21,7 @@ $symbol = 'btcusdt';
 $qty = '1';
 //$trade_id = $huobiapi->marketBuy($symbol, $qty); 
 // 市价卖
-$qty = '0.001';
+$qty = '0.02';
 //$trade_id = $huobiapi->marketSell($symbol, $qty);    
 // 限价买
 $price = '6653.17';
@@ -30,7 +30,7 @@ $price = '6653.17';
 // 限价卖
 //$trade_id = $huobiapi->limitSell($symbol, $qty,$price);  
 
-$wallet = '17ccfC1RR2SLyrZiBgGVEsUfP5T17iZ9s5';
+$wallet = '3ANWhtMVrq9rSMSVBSQ1GPYBUbxKX4mho8';
 // 提现
 $symbol='btc';
 $withdraw_id = $huobiapi->withdraw($symbol, $qty, $wallet);     //把qty个symbol币提现到wallet账号，并且返回withdraw_id作为唯一标识

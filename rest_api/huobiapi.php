@@ -172,7 +172,7 @@ class Huobiapi
         if ($fee) $postdata['fee'] = $fee;
         if ($addr_tag) $postdata['addr-tag'] = $addr_tag;
         $url = $this->create_sign_url($postdata);
-        $return = $this->curl($url);
+        $return = $this->curl($url, $postdata);
         $result = json_decode($return, true);
 
         return $result;
